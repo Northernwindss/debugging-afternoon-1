@@ -5,7 +5,7 @@ import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       products: [],
@@ -20,8 +20,9 @@ class App extends Component {
     axios
       .get("https://practiceapi.devmountain.com/products/")
       .then(response => {
+        console.log(22222222222222222, response)
         this.setState({
-          products: response
+          products: response.data
         });
       });
   }
@@ -57,8 +58,8 @@ class App extends Component {
           {showCart ? (
             <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
           ) : (
-            <StoreFront products={products} addToCart={this.addToCart} />
-          )}
+              <StoreFront products={products} addToCart={this.addToCart} />
+            )}
         </div>
       </div>
     );

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './StoreFront.css';
 
-
 class StoreFront extends Component {
   render() {
     let productDisplay = this.props.products.map((element, index) => {
